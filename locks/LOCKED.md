@@ -793,3 +793,15 @@ Pre-run 24's combined target is met (retry 1). Everything locked above stays. On
 ## Locked during pre-run 25
 
 When a fix works, append it here, one block per fix: UTC time, what failed or worked, what was changed, why that change stays.
+
+```
+- 2026-11-14T01:01:59Z: the desk runner's open held candidates-missing (private/candidates.json not copied into the new run
+  directory). Copied from pre-run 24 retry 1's desk directory; open 01:02:39Z. Stays: copy candidates.json is an open-checklist
+  line.
+- 2026-11-14T01:02:52Z: Mini's runner held no-git-identity on the fresh clone and exited without publishing. Local user.name and
+  user.email set in that clone; MINI-ARMED 01:03:58Z. Stays: set git identity on every new clone before the arm.
+- Worked, no fix: the fixed guest kit (tn10-target-plan 1433a42) ran one match clean, 8 of 8 carriers accepted on the desk node.
+- Result (after the tail): met; first-behind rule (xxix) found no component behind at 8 families. Key 0 ended at 2,492 coins
+  over 3 tKAS, under REVIEW-01's 2,500 line: the next pre-run splits (logged) before its open.
+```
+

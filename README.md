@@ -12,10 +12,10 @@
 |---|---|
 | Target | all three components (covenant hop, KCC-20 mint, tic-tac-toe guest carrier) still land on the desk node in the same open window with one knob raised, and the first component to fall behind is named with the load at that minute ([target plan](https://github.com/STP-KAS/tn10-target-plan/blob/main/plan/PLAN.md), pre-run 25 card) |
 | The knob | the family count, 4 → 8 (written before the arm; [plan/PLAN.md](plan/PLAN.md)) |
-| Met or not met | open: written after RETURN |
+| Met or not met | **met**: 14,339 covenant hops (families 1–8), 30 of 30 mints and 8 of 8 guest carriers accepted on the desk node in one open window (01:02:39–01:34:05 UTC) with the family count raised 4 → 8; no component fell behind ([counts/chain/FIRST-BEHIND.md](counts/chain/FIRST-BEHIND.md), [logs/LESSONS.md](logs/LESSONS.md)) |
 | Retry count | 0 (gate: [pre-run 24 retry 1](https://github.com/STP-KAS/tn10-storm-2026-11-11-prerun-24-retry-1) met pre-run 24's combined target) |
 | Core tags | 1 (mempool rotation, issue #1146: a light 60-second id sample, not a full dump) |
-| Status | in-progress |
+| Status | done |
 
 **Where this starts.** From [pre-run 24 retry 1's locks/LOCKED.md](https://github.com/STP-KAS/tn10-storm-2026-11-11-prerun-24-retry-1/blob/main/locks/LOCKED.md), copied here as [locks/LOCKED.md](locks/LOCKED.md), with retry 1's result and a pre-run 25 section added at the end. Pre-runs 1 to 23 are in [tn-master](https://github.com/STP-KAS/tn-master).
 

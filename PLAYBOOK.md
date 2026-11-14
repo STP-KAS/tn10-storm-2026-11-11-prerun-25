@@ -30,3 +30,10 @@ Filled before `PRE-RUN-OPEN` (UTC):
 ## Offline rehearsal before the open (fake node, fake sender and mint, local bare origin; the guest kit in dry mode: its read-only gate against the desk node, nothing sent)
 
 - p25-a, 00:39–00:59 UTC: passed on the final runner and guest files. Genesis of nine (fake), `FAMILIES attempting=8/8 (family 9 is the mint line)`, the mint line to its cap as family 9, the guest kid's gate `gate ok`, its totals and its stop at RETURN, all step files, TIMELINE, MEMPOOL, MINT, TARGET (rows "families 1–8" and "family 9") and METHOD rendered; runner exit 0. The first-behind script (`tools/post/firstbehind.mjs`) was run once on the rehearsal's files. The rehearsal's counts are fake and are not results.
+
+## After the run
+
+- `PRE-RUN-OPEN` 2026-11-14T01:02:39Z (after a `candidates-missing` hold at 01:01:59Z, fixed by copying `private/candidates.json`); Mini held `no-git-identity` at 01:02:52Z, git identity set, `MINI-ARMED` 01:03:58Z.
+- `BUDGET_CHECK` 01:05:10Z pass; genesis 9 of 9 at 01:05:26Z; guest 8 of 8 accepted on the desk node by 01:06:06Z; mint line at its cap 01:13:15Z; bot HOLD-4 minute 01:23 (38 of 38 submit-OK); guest stopped at RETURN 01:24:27Z (1 game finished); RETURN on origin 01:28:22Z; TARGET 01:34:10Z; runner end 01:34:13Z. Mini READ 16 of 16.
+- Result: met, no component fell behind (see [logs/LESSONS.md](logs/LESSONS.md) and [counts/chain/FIRST-BEHIND.md](counts/chain/FIRST-BEHIND.md)).
+- Key 0 after the run: 108,621 usable tKAS in 2,492 coins over 3 tKAS, under the 2,500-coin line: split before the next open.
