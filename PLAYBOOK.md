@@ -19,15 +19,14 @@ Desk and Mini at least 100 GB free, box at least 20 GB. Below that nothing start
 
 Filled before `PRE-RUN-OPEN` (UTC):
 
-- Guest keys funded from our own mining wallet, one transaction, 2026-11-13T22:48:55Z: 1,000 tKAS in six coins (4 × 200 to the operator key, 2 × 100 to the issuer key), fee 0.006144 tKAS. Mining wallet before 6,161,316, after 6,160,316 tKAS.
-- Genesis coins: key 0 gave one fresh coin each to keys 3, 4, 5 and 6, 2026-11-13T23:13:45Z, about 86.7 tKAS in all, fees 0.009744. The mint key kept its 40 coins (no top-up needed).
-- Guest kit gate, `arm-guest.sh --dry` against the desk node, 2026-11-13T23:08:04Z: `GUEST gate ok mode=dry` (testnet-10, synced, server 2.1.0, DAA moved 92 in 10 s, operator 4 coins / 800 tKAS, issuer 2 coins / 200 tKAS, nothing submitted).
-- Key 0 after funding: 130,513 usable tKAS in 3,662 coins over 3 tKAS. `BUDGET_CHECK` is repeated by the desk runner before genesis.
-- Disk: desk 315 GB free, Mini 294 GB free, box 102 GB free; all over the floor.
+- Guest issuer key topped up from our own mining wallet, one transaction, 2026-11-14T00:30:41Z: one coin of 100 tKAS (its second coin went to `ttd`'s bootstrap in retry 1), fee 0.003054 tKAS. Mining wallet before 6,160,316, after 6,160,216 tKAS. No other move from the mining wallet: key 0 already held 123,210 usable tKAS in 3,399 coins over 3 tKAS, over three times the 20,000 planning cap.
+- Genesis coins: key 0 gave one fresh coin each to keys 3, 4, 5, 6, 8, 9, 10 and 11, and one more coin to the mint key, 2026-11-14T00:37:32Z, 179.76 tKAS in all, fees 0.021924.
+- Guest kit gate, `arm-guest.sh --dry` (the fixed kit, `1433a42`) against the desk node, 2026-11-14T00:31:15Z: `GUEST gate ok mode=dry` (testnet-10, synced, server 2.1.0, DAA moved 99 in 10 s, operator 4 coins / 798 tKAS, issuer 2 coins / 200 tKAS, nothing submitted).
+- Hash path check (`sixteen.ps1 -Mode check`, nothing pushed), 2026-11-14T00:37:47Z: nine rows built and verified against the bundle.
+- Bot free check from the desk (read-only, nothing sent): 7 of 7 candidates answered, 1 free distinct kaspad.
+- Docker Desktop on the desk: the old local container stack (12 containers) was set to restart policy `no` (not removed, left stopped) before the guest image was rebuilt with the fixed kit.
+- Disk: desk 332 GB free, Mini 317 GB free, box 102 GB free; all over the floor.
 
-## Offline rehearsals before the open (fake node, fake sender and mint, local bare origin; the guest kit in dry mode: its read-only gate against the desk node, nothing sent)
+## Offline rehearsal before the open (fake node, fake sender and mint, local bare origin; the guest kit in dry mode: its read-only gate against the desk node, nothing sent)
 
-- p24r1-a, stopped early: the rehearsal's tool dir held the real genesis submitter instead of the fake one; it stopped on the fake bundle before any submit (nothing sent).
-- p24r1-b, stopped early by hand: the guest kid exited at its start (a comment hid two constant definitions in `guest24.mjs`). Fixed.
-- p24r1-c, 23:23–23:43 UTC: passed on the final runner and guest files (`desk-runner.mjs` db86145f7009, `guest24.mjs` 2e2698738630, LF sha256 prefixes, the same as in `tools/desk/`). The guest kid started the container, read the kit's gate (`gate ok`), wrote its totals, stopped at RETURN's GUEST-STOP, ran the lane read and removed the container; no process exit was logged; TARGET.md rendered the guest row. The rehearsal's counts are fake and are not results.
-- The desk bot was checked read-only (one free check, nothing sent or pushed) before the open.
+- p25-a, 00:39–00:59 UTC: passed on the final runner and guest files. Genesis of nine (fake), `FAMILIES attempting=8/8 (family 9 is the mint line)`, the mint line to its cap as family 9, the guest kid's gate `gate ok`, its totals and its stop at RETURN, all step files, TIMELINE, MEMPOOL, MINT, TARGET (rows "families 1–8" and "family 9") and METHOD rendered; runner exit 0. The first-behind script (`tools/post/firstbehind.mjs`) was run once on the rehearsal's files. The rehearsal's counts are fake and are not results.
